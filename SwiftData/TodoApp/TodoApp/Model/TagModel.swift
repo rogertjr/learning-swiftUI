@@ -9,12 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-final class Tag {
+final class TagModel {
+    // MARK: - Properteis
     var name: String
-    var tasks: [Task]?
-    var color: RGBColor
+    var tasks: [TaskModel]?
+    var color: RGBColorModel
     
-    init(_ name: String, color: RGBColor) {
+    // MARK: - Init
+    init(_ name: String, color: RGBColorModel) {
         self.name = name
         self.color = color
     }

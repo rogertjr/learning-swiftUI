@@ -10,7 +10,7 @@ import SwiftData
 
 struct TodoDetailView: View {
     // MARK: - Properties
-    @Bindable var task: Task
+    @Bindable var task: TaskModel
     
     // MARK: - User Interface
     var body: some View {
@@ -37,7 +37,7 @@ struct TodoDetailView: View {
             }
             
             Button {
-                let tag = Tag("dummyTag", color: RGBColor(.blue))
+                let tag = TagModel("dummyTag", color: RGBColorModel(.blue))
                 task.tags?.append(tag)
             } label: {
                 Text("Add a tag")
@@ -49,6 +49,8 @@ struct TodoDetailView: View {
 }
 
 // MARK: - Preview
-//#Preview {
-//    TodoDetailView(task: Task("Task 01", isDone: false, priority: 0))
-//}
+#Preview {
+    ModelPreview { task in
+        TodoDetailView(task: task)
+    }
+}

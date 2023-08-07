@@ -11,13 +11,13 @@ import SwiftData
 struct TodoListView: View {
     // MARK: - Properties
     @Environment(\.modelContext) private var modelContext
-    @Query(filter: #Predicate<Task>{ !$0.isDone },
-           sort: [.init(\Task.title), .init(\Task.creationDate, order: .reverse)],
-           animation: .bouncy) private var todos: [Task]
+    @Query(filter: #Predicate<TaskModel>{ !$0.isDone },
+           sort: [.init(\TaskModel.title), .init(\TaskModel.creationDate, order: .reverse)],
+           animation: .bouncy) private var todos: [TaskModel]
     
-    @Query(filter: #Predicate<Task>{ $0.isDone },
-           sort: [.init(\Task.title), .init(\Task.creationDate, order: .reverse)],
-           animation: .bouncy) private var finishedTasks: [Task]
+    @Query(filter: #Predicate<TaskModel>{ $0.isDone },
+           sort: [.init(\TaskModel.title), .init(\TaskModel.creationDate, order: .reverse)],
+           animation: .bouncy) private var finishedTasks: [TaskModel]
     
     // MARK: - User Interface
     var body: some View {
@@ -55,7 +55,7 @@ struct TodoListView: View {
 
     // MARK: - Action Handlers
     private func addItem() {
-        let newTask = Task("task \(todos.count + 1)")
+        let newTask = TaskModel("task \(todos.count + 1)")
         modelContext.insert(newTask)
     }
 
@@ -69,5 +69,5 @@ struct TodoListView: View {
 // MARK: - Preview
 #Preview {
     TodoListView()
-        .modelContainer(for: Task.self, inMemory: true)
+        .modelContainer(previewContainer)
 }

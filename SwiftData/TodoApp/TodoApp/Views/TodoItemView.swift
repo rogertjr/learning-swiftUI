@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TodoItemView: View {
     // MARK: - Properties
-    let task: Task
+    let task: TaskModel
     
     // MARK: - User Interface
     var body: some View {
@@ -26,6 +26,8 @@ struct TodoItemView: View {
 }
 
 // MARK: - Preview
-//#Preview {
-//    TodoItemView(task: Task("First Task", isDone: true, priority: 0))
-//}
+#Preview {
+    ModelPreview { task in
+        TodoItemView(task: task)
+    }
+}

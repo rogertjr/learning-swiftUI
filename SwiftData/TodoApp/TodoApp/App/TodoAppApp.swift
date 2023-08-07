@@ -15,6 +15,6 @@ struct TodoAppApp: App {
         WindowGroup {
             TodoListView()
         }
-        .modelContainer(for: Task.self)
+        .modelContainer(for: TaskModel.self)
     }
 }

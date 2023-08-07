@@ -8,12 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct RGBColor: Codable {
+struct RGBColorModel: Codable {
+    // MARK: - Properteis
     let red: Double
     let green: Double
     let blue: Double
     let alpha: Double
 
+    // MARK: - Inits
     init(red: Double, green: Double, blue: Double, alpha: Double = 1.0) {
         self.red = red
         self.green = green
@@ -36,6 +38,7 @@ struct RGBColor: Codable {
         self.alpha = Double(alpha)
     }
 
+    // MARK: - Helpers
     func toSwiftUIColor() -> Color {
         return Color(red: red, green: green, blue: blue, opacity: alpha)
     }

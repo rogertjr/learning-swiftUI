@@ -42,11 +42,16 @@ final class SalesViewModel: ObservableObject {
         return totalSalesPerDate(salesByDate: salesByWeek)
     }
     
-    // Month
-    // TO-DO
+    // Category
+    var totalSalesPerCategory: [(category: BookCategoryModel, sales: Int)] {
+        let salesByCategory = salesGroupedByCategory(salesData)
+        let totalSalesPerCategory = totalSalesPerCategory(salesByCategory)
+        return totalSalesPerCategory.sorted { $0.sales > $1.sales  }
+    }
     
-    // MARK: - Init
-    init() { }
+    var bestSellingCategory: (category: BookCategoryModel, sales: Int)? {
+        totalSalesPerCategory.max { $0.sales < $1.sales }
+    }
     
     // MARK: - Preview
     static var previewData: SalesViewModel {
@@ -59,6 +64,7 @@ final class SalesViewModel: ObservableObject {
 
 // MARK: - Helpers
 private extension SalesViewModel {
+    // Weekday
     func calculateMedian(salesData: [(number: Int, sales: Double)]) -> Double? {
             let quantities = salesData.map { $0.sales }.sorted()
             let count = quantities.count
@@ -90,6 +96,7 @@ private extension SalesViewModel {
         return salesByWeekday
     }
     
+    // Week
     func salesGroupedByWeek(_ sales: [SaleModel]) -> [Date: [SaleModel]] {
         var salesByWeek: [Date: [SaleModel]] = [:]
                 
@@ -106,6 +113,35 @@ private extension SalesViewModel {
         return salesByWeek
     }
     
+    // Category
+    func salesGroupedByCategory(_ sales: [SaleModel]) -> [BookCategoryModel: [SaleModel]] {
+        var salesByCategory: [BookCategoryModel: [SaleModel]] = [:]
+        
+        for sale in sales {
+            let category = sale.book.category
+            if salesByCategory[category] != nil {
+                salesByCategory[category]!.append(sale)
+            } else {
+                salesByCategory[category] = [sale]
+            }
+        }
+        
+        return salesByCategory
+    }
+    
+    func totalSalesPerCategory(_ salesByCategory: [BookCategoryModel: [SaleModel]]) -> [(category: BookCategoryModel, sales: Int)] {
+        var totalSales: [(category: BookCategoryModel, sales: Int)] = []
+        
+        for (category, sales) in salesByCategory {
+            let totalQuantityForCategory = sales.reduce(0) { $0 + $1.quantity }
+            totalSales.append((category: category, sales: totalQuantityForCategory))
+        }
+        
+        return totalSales
+    }
+    
+    
+    // Common
     func averageSalesPerNumber(salesByNumber: [Int: [SaleModel]]) -> [(number: Int, sales: Double)] {
         var averageSales: [(number: Int, sales: Double)] = []
         
@@ -128,5 +164,4 @@ private extension SalesViewModel {
         
         return totalSales
     }
-    
 }

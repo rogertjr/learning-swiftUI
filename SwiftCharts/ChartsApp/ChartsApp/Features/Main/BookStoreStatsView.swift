@@ -28,6 +28,13 @@ struct BookStoreStatsView: View {
                 } label: {
                     SimpleSalesByWeekdayView(salesViewModel: salesViewModel)
                 }
+                
+                NavigationLink {
+                    SalesPerBookCategoryView(salesViewModel: salesViewModel)
+                        .navigationBarTitleDisplayMode(.inline)
+                } label: {
+                    SimpleSalesPerBookCategoryView(salesViewModel: salesViewModel)
+                }
             }
             .navigationTitle("Your Book Store Stats")
         }

@@ -20,7 +20,7 @@ struct SimpleBookSalesView: View {
                     Image(systemName: isPositiveChange ? "arrow.up.right" : "arrow.down.right").bold()
                         .foregroundColor( isPositiveChange ? .green : .red)
                     
-                    Text("You book sales ") +
+                    Text("Your book sales ") +
                     Text(changedBookSales)
                         .bold() +
                     Text(" in the last 90 days.")

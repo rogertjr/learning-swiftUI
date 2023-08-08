@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RGBColorModel: Codable {
-    // MARK: - Properteis
+    // MARK: - Properties
     let red: Double
     let green: Double
     let blue: Double

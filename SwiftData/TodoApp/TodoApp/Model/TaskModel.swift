@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class TaskModel {
-    // MARK: - Properteis
+    // MARK: - Properties
     @Attribute(.unique)
     var creationDate: Date
     var title: String

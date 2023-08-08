@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ModelPreview<Model: PersistentModel, Content: View>: View {
-    // MARK: - Properteis
+    // MARK: - Properties
     var content: (Model) -> Content
     
     // MARK: - Init

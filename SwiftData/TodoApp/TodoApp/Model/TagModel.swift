@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class TagModel {
-    // MARK: - Properteis
+    // MARK: - Properties
     var name: String
     var tasks: [TaskModel]?
     var color: RGBColorModel

@@ -1,2 +1,10 @@
-# learning-swiftUI
-A blog about SwiftUI
+# SwiftData 
+<p align="left">
+    <img src="https://img.shields.io/badge/iOS-17.0+-red.svg" />
+    <img src="https://img.shields.io/badge/Xcode-15.0+-blue.svg" />
+</p>
+SwiftData is a new data persistence framework introduced during WWDC 2023. <br/>
+It allows you to store and manage data on your device and even use iCloud sync to share data between different devices;
+
+## Examples
+- [TodoApp](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftData/TodoApp) - A simple CRUD using the new SwiftData framework

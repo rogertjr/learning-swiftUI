@@ -18,6 +18,7 @@ struct BookStoreStatsView: View {
                 
                 NavigationLink {
                     DetailedBookSalesView(salesViewModel: salesViewModel)
+                        .navigationBarTitleDisplayMode(.inline)
                 } label: {
                     SimpleBookSalesView(salesViewModel: salesViewModel)
                 }

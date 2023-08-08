@@ -11,15 +11,40 @@ final class SalesViewModel: ObservableObject {
     // MARK: - Properties
     @Published var salesData = [SaleModel]()
     @Published var lastTotalSales: Int = 0
-    var totalSales: Int {
-        salesData.reduce(0, { $0 + $1.quantity })
+    private let calendar = Calendar.current
+    var totalSales: Int { salesData.reduce(0, { $0 + $1.quantity }) }
+    
+    // Weekday
+    var salesByWeekday: [(number: Int, sales: [SaleModel])] {
+        let salesByWeekday = salesGroupedByWeekday(salesData).map { (number: $0.key, sales: $0.value) }
+        return salesByWeekday.sorted { $0.number < $1.number }
     }
     
-    var salesByWeek:[(day: Date, sales: Int)] {
+    var averageSalesByWeekday: [(number: Int, sales: Double)] {
+        let salesByWeekday = salesGroupedByWeekday(salesData)
+        let averageSales = averageSalesPerNumber(salesByNumber: salesByWeekday)
+        let sorted = averageSales.sorted { $0.number < $1.number }
+        return sorted
+    }
+    
+    var highestSellingWeekday: (number: Int, sales: Double)? {
+        averageSalesByWeekday.max(by: { $0.sales < $1.sales })
+    }
+    
+    var medianSales: Double {
+        let salesData = self.averageSalesByWeekday
+        return calculateMedian(salesData: salesData) ?? 0
+    }
+    
+    // Week
+    var salesByWeek: [(day: Date, sales: Int)] {
         let salesByWeek = salesGroupedByWeek(salesData)
         return totalSalesPerDate(salesByDate: salesByWeek)
     }
-        
+    
+    // Month
+    // TO-DO
+    
     // MARK: - Init
     init() { }
     
@@ -30,12 +55,44 @@ final class SalesViewModel: ObservableObject {
         viewModel.lastTotalSales = 1200
         return viewModel
     }
+}
+
+// MARK: - Helpers
+private extension SalesViewModel {
+    func calculateMedian(salesData: [(number: Int, sales: Double)]) -> Double? {
+            let quantities = salesData.map { $0.sales }.sorted()
+            let count = quantities.count
+
+            if count % 2 == 0 {
+                // Even count: the median is the average of the two middle numbers
+                let middleIndex = count / 2
+                let median = (quantities[middleIndex - 1] + quantities[middleIndex]) / 2
+                return Double(median)
+            } else {
+                // Odd count: the median is the middle number
+                let middleIndex = count / 2
+                return Double(quantities[middleIndex])
+            }
+        }
     
-    // MARK: - Helpers
+    func salesGroupedByWeekday(_ sales: [SaleModel]) -> [Int: [SaleModel]] {
+        var salesByWeekday: [Int: [SaleModel]] = [:]
+        
+        for sale in sales {
+            let weekday = calendar.component(.weekday, from: sale.saleDate)
+            if salesByWeekday[weekday] != nil {
+                salesByWeekday[weekday]!.append(sale)
+            } else {
+                salesByWeekday[weekday] = [sale]
+            }
+        }
+        
+        return salesByWeekday
+    }
+    
     func salesGroupedByWeek(_ sales: [SaleModel]) -> [Date: [SaleModel]] {
         var salesByWeek: [Date: [SaleModel]] = [:]
                 
-        let calendar = Calendar.current
         for sale in sales {
             guard let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: sale.saleDate))
                 else { continue }
@@ -47,6 +104,18 @@ final class SalesViewModel: ObservableObject {
         }
         
         return salesByWeek
+    }
+    
+    func averageSalesPerNumber(salesByNumber: [Int: [SaleModel]]) -> [(number: Int, sales: Double)] {
+        var averageSales: [(number: Int, sales: Double)] = []
+        
+        for (number, sales) in salesByNumber {
+            let count = sales.count
+            let totalQuantityForWeekday = sales.reduce(0) { $0 + $1.quantity }
+            averageSales.append((number: number, sales: Double(totalQuantityForWeekday) / Double(count)))
+        }
+        
+        return averageSales
     }
     
     func totalSalesPerDate(salesByDate: [Date: [SaleModel]]) -> [(day: Date, sales: Int)] {

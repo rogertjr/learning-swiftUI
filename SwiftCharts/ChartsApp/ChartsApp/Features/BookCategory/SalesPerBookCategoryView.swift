@@ -31,7 +31,8 @@ struct SalesPerBookCategoryView: View {
             .pickerStyle(.segmented)
             
             SalesPerBookCategoryHeaderView(selectedChartStyle: selectedChartStyle, salesViewModel: salesViewModel)
-                .font(.title3).padding(.vertical)
+                .font(.title3)
+                .padding(.vertical)
             
             switch selectedChartStyle {
             case .bar:
@@ -43,13 +44,12 @@ struct SalesPerBookCategoryView: View {
                     Text("Pie charts only available for macOS 14 and iOS 17")
                 }
             case .singleBar:
-                Text("TODO")
-//                SalesPerBookCategoryStackedBarChartView(salesViewModel: salesViewModel)
+                SalesPerBookCategoryStackedBarChartView(salesViewModel: salesViewModel)
             }
             
             Button(action: {
                 withAnimation {
-                    salesViewModel.salesData = SaleModel.threeMonthsExamples()
+                    salesViewModel.fetchNewSalesData()
                 }
             }, label: {
                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

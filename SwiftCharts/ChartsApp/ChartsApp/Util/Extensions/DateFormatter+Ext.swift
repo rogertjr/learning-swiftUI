@@ -16,4 +16,8 @@ extension DateFormatter {
     func longWeekday(for number: Int) -> String {
         self.weekdaySymbols[number - 1]
     }
+    
+    func month(for number: Int) -> String {
+        self.shortStandaloneMonthSymbols[number - 1]
+    }
 }

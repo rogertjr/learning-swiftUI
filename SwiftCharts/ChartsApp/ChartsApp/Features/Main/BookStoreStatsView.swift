@@ -10,6 +10,7 @@ import SwiftUI
 struct BookStoreStatsView: View {
     // MARK: - Properties
     @StateObject var salesViewModel = SalesViewModel.previewData
+    @StateObject var expensesViewModel = ExpensesViewModel.previewData
     
     // MARK: - User Interface
     var body: some View {
@@ -34,6 +35,13 @@ struct BookStoreStatsView: View {
                         .navigationBarTitleDisplayMode(.inline)
                 } label: {
                     SimpleSalesPerBookCategoryView(salesViewModel: salesViewModel)
+                }
+                
+                NavigationLink {
+                    DetailExpensesView(expensesViewModel: expensesViewModel)
+                        .navigationBarTitleDisplayMode(.inline)
+                } label: {
+                    SimpleExpensesView(expensesViewModel: expensesViewModel)
                 }
             }
             .navigationTitle("Your Book Store Stats")

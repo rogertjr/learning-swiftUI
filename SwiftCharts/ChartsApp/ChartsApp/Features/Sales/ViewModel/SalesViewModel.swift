@@ -9,8 +9,8 @@ import Foundation
 
 final class SalesViewModel: ObservableObject {
     // MARK: - Properties
-    @Published var salesData = [SaleModel]()
-    @Published var lastTotalSales: Int = 0
+    @Published private (set) var salesData = [SaleModel]()
+    @Published private (set) var lastTotalSales: Int = 0
     private let calendar = Calendar.current
     var totalSales: Int { salesData.reduce(0, { $0 + $1.quantity }) }
     
@@ -53,6 +53,10 @@ final class SalesViewModel: ObservableObject {
         totalSalesPerCategory.max { $0.sales < $1.sales }
     }
     
+    func fetchNewSalesData() {
+        salesData = SaleModel.threeMonthsExamples()
+    }
+    
     // MARK: - Preview
     static var previewData: SalesViewModel {
         let viewModel = SalesViewModel()
@@ -66,20 +70,20 @@ final class SalesViewModel: ObservableObject {
 private extension SalesViewModel {
     // Weekday
     func calculateMedian(salesData: [(number: Int, sales: Double)]) -> Double? {
-            let quantities = salesData.map { $0.sales }.sorted()
-            let count = quantities.count
-
-            if count % 2 == 0 {
-                // Even count: the median is the average of the two middle numbers
-                let middleIndex = count / 2
-                let median = (quantities[middleIndex - 1] + quantities[middleIndex]) / 2
-                return Double(median)
-            } else {
-                // Odd count: the median is the middle number
-                let middleIndex = count / 2
-                return Double(quantities[middleIndex])
-            }
+        let quantities = salesData.map { $0.sales }.sorted()
+        let count = quantities.count
+        
+        if count % 2 == 0 {
+            // Even count: the median is the average of the two middle numbers
+            let middleIndex = count / 2
+            let median = (quantities[middleIndex - 1] + quantities[middleIndex]) / 2
+            return Double(median)
+        } else {
+            // Odd count: the median is the middle number
+            let middleIndex = count / 2
+            return Double(quantities[middleIndex])
         }
+    }
     
     func salesGroupedByWeekday(_ sales: [SaleModel]) -> [Int: [SaleModel]] {
         var salesByWeekday: [Int: [SaleModel]] = [:]
@@ -103,6 +107,7 @@ private extension SalesViewModel {
         for sale in sales {
             guard let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: sale.saleDate))
                 else { continue }
+            
             if salesByWeek[startOfWeek] != nil {
                 salesByWeek[startOfWeek]!.append(sale)
             } else {
@@ -139,7 +144,6 @@ private extension SalesViewModel {
         
         return totalSales
     }
-    
     
     // Common
     func averageSalesPerNumber(salesByNumber: [Int: [SaleModel]]) -> [(number: Int, sales: Double)] {

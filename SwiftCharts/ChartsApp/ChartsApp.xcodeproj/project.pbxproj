@@ -12,13 +12,20 @@
 		37D3756D2A8256440047369C /* SalesPerBookCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3756C2A8256440047369C /* SalesPerBookCategoryView.swift */; };
 		37D3756F2A8256540047369C /* SimpleSalesPerBookCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3756E2A8256540047369C /* SimpleSalesPerBookCategoryView.swift */; };
 		37D375722A8256A10047369C /* SalesPerBookCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375712A8256A10047369C /* SalesPerBookCategoryHeaderView.swift */; };
+		37D375762A829AED0047369C /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375752A829AED0047369C /* ExpensesViewModel.swift */; };
+		37D375792A82C0310047369C /* ExpensesLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375782A82C0310047369C /* ExpensesLineChartView.swift */; };
+		37D3757B2A82C0380047369C /* ExpensesBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3757A2A82C0380047369C /* ExpensesBarChartView.swift */; };
+		37D3757D2A82C04D0047369C /* ExpensesDetailGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3757C2A82C04D0047369C /* ExpensesDetailGridView.swift */; };
+		37D3757F2A82C0600047369C /* DetailExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3757E2A82C0600047369C /* DetailExpensesView.swift */; };
+		37D375812A82C06C0047369C /* SimpleExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375802A82C06C0047369C /* SimpleExpensesView.swift */; };
+		37D375852A82C1C40047369C /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375842A82C1C40047369C /* Square.swift */; };
+		37D375872A82C71F0047369C /* SalesPerBookCategoryStackedBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D375862A82C71F0047369C /* SalesPerBookCategoryStackedBarChartView.swift */; };
 		37FA56AE2A81A20000AF339C /* ChartsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56AD2A81A20000AF339C /* ChartsAppApp.swift */; };
 		37FA56B22A81A20400AF339C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FA56B12A81A20400AF339C /* Assets.xcassets */; };
 		37FA56B62A81A20400AF339C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FA56B52A81A20400AF339C /* Preview Assets.xcassets */; };
 		37FA56C12A81A28500AF339C /* BookCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56C02A81A28500AF339C /* BookCategoryModel.swift */; };
 		37FA56C32A81A32A00AF339C /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56C22A81A32A00AF339C /* AuthorModel.swift */; };
 		37FA56C52A81A3A300AF339C /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56C42A81A3A300AF339C /* BookModel.swift */; };
-		37FA56C72A81A4B500AF339C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 37FA56C62A81A4B500AF339C /* .swiftlint.yml */; };
 		37FA56CA2A81A67600AF339C /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56C92A81A67600AF339C /* CustomerModel.swift */; };
 		37FA56CC2A81A6E000AF339C /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56CB2A81A6E000AF339C /* ExpenseModel.swift */; };
 		37FA56CE2A81A6F400AF339C /* SaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA56CD2A81A6F400AF339C /* SaleModel.swift */; };
@@ -41,6 +48,14 @@
 		37D3756C2A8256440047369C /* SalesPerBookCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesPerBookCategoryView.swift; sourceTree = "<group>"; };
 		37D3756E2A8256540047369C /* SimpleSalesPerBookCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSalesPerBookCategoryView.swift; sourceTree = "<group>"; };
 		37D375712A8256A10047369C /* SalesPerBookCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesPerBookCategoryHeaderView.swift; sourceTree = "<group>"; };
+		37D375752A829AED0047369C /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
+		37D375782A82C0310047369C /* ExpensesLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesLineChartView.swift; sourceTree = "<group>"; };
+		37D3757A2A82C0380047369C /* ExpensesBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesBarChartView.swift; sourceTree = "<group>"; };
+		37D3757C2A82C04D0047369C /* ExpensesDetailGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesDetailGridView.swift; sourceTree = "<group>"; };
+		37D3757E2A82C0600047369C /* DetailExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExpensesView.swift; sourceTree = "<group>"; };
+		37D375802A82C06C0047369C /* SimpleExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExpensesView.swift; sourceTree = "<group>"; };
+		37D375842A82C1C40047369C /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		37D375862A82C71F0047369C /* SalesPerBookCategoryStackedBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesPerBookCategoryStackedBarChartView.swift; sourceTree = "<group>"; };
 		37FA56AA2A81A20000AF339C /* ChartsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FA56AD2A81A20000AF339C /* ChartsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsAppApp.swift; sourceTree = "<group>"; };
 		37FA56B12A81A20400AF339C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +64,6 @@
 		37FA56C02A81A28500AF339C /* BookCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryModel.swift; sourceTree = "<group>"; };
 		37FA56C22A81A32A00AF339C /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
 		37FA56C42A81A3A300AF339C /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
-		37FA56C62A81A4B500AF339C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		37FA56C92A81A67600AF339C /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		37FA56CB2A81A6E000AF339C /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
 		37FA56CD2A81A6F400AF339C /* SaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleModel.swift; sourceTree = "<group>"; };
@@ -83,6 +97,7 @@
 				37D375702A82568A0047369C /* Components */,
 				37D375682A82561E0047369C /* SalesPerBookCategoryPieChartView.swift */,
 				37D3756A2A8256280047369C /* SalesPerBookCategoryBarChartView.swift */,
+				37D375862A82C71F0047369C /* SalesPerBookCategoryStackedBarChartView.swift */,
 				37D3756C2A8256440047369C /* SalesPerBookCategoryView.swift */,
 				37D3756E2A8256540047369C /* SimpleSalesPerBookCategoryView.swift */,
 			);
@@ -95,6 +110,51 @@
 				37D375712A8256A10047369C /* SalesPerBookCategoryHeaderView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		37D375732A829ADA0047369C /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				37D375772A82C01E0047369C /* View */,
+				37D375742A829AE10047369C /* ViewModel */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		37D375742A829AE10047369C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37D375752A829AED0047369C /* ExpensesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37D375772A82C01E0047369C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37D375822A82C0720047369C /* Components */,
+				37D3757E2A82C0600047369C /* DetailExpensesView.swift */,
+				37D375802A82C06C0047369C /* SimpleExpensesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37D375822A82C0720047369C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				37D3757A2A82C0380047369C /* ExpensesBarChartView.swift */,
+				37D3757C2A82C04D0047369C /* ExpensesDetailGridView.swift */,
+				37D375782A82C0310047369C /* ExpensesLineChartView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		37D375832A82C1B30047369C /* ChartSymbolShape */ = {
+			isa = PBXGroup;
+			children = (
+				37D375842A82C1C40047369C /* Square.swift */,
+			);
+			path = ChartSymbolShape;
 			sourceTree = "<group>";
 		};
 		37FA56A12A81A20000AF339C = {
@@ -121,7 +181,6 @@
 				37FA56BE2A81A23800AF339C /* Features */,
 				37FA56BF2A81A27700AF339C /* Model */,
 				37FA56B42A81A20400AF339C /* Preview Content */,
-				37FA56C62A81A4B500AF339C /* .swiftlint.yml */,
 			);
 			path = ChartsApp;
 			sourceTree = "<group>";
@@ -146,6 +205,7 @@
 		37FA56BD2A81A23000AF339C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				37D375832A82C1B30047369C /* ChartSymbolShape */,
 				37FA56CF2A81A70200AF339C /* Extensions */,
 				37FA56B12A81A20400AF339C /* Assets.xcassets */,
 			);
@@ -155,6 +215,7 @@
 		37FA56BE2A81A23800AF339C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				37D375732A829ADA0047369C /* Expenses */,
 				37D375672A8253F00047369C /* BookCategory */,
 				37FA56E52A81C98600AF339C /* Weekday */,
 				37FA56E02A81BC3D00AF339C /* Main */,
@@ -297,7 +358,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37FA56C72A81A4B500AF339C /* .swiftlint.yml in Resources */,
 				37FA56B62A81A20400AF339C /* Preview Assets.xcassets in Resources */,
 				37FA56B22A81A20400AF339C /* Assets.xcassets in Resources */,
 			);
@@ -310,10 +370,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D375852A82C1C40047369C /* Square.swift in Sources */,
 				37FA56D12A81A70B00AF339C /* Date+Ext.swift in Sources */,
 				37FA56CE2A81A6F400AF339C /* SaleModel.swift in Sources */,
+				37D3757B2A82C0380047369C /* ExpensesBarChartView.swift in Sources */,
 				37D375722A8256A10047369C /* SalesPerBookCategoryHeaderView.swift in Sources */,
 				37FA56EB2A81CC7900AF339C /* DateFormatter+Ext.swift in Sources */,
+				37D375812A82C06C0047369C /* SimpleExpensesView.swift in Sources */,
 				37FA56C52A81A3A300AF339C /* BookModel.swift in Sources */,
 				37D3756D2A8256440047369C /* SalesPerBookCategoryView.swift in Sources */,
 				37D375692A82561E0047369C /* SalesPerBookCategoryPieChartView.swift in Sources */,
@@ -321,17 +384,22 @@
 				37FA56CA2A81A67600AF339C /* CustomerModel.swift in Sources */,
 				37FA56E22A81BC5900AF339C /* BookStoreStatsView.swift in Sources */,
 				37FA56D52A81A94A00AF339C /* SalesViewModel.swift in Sources */,
+				37D3757F2A82C0600047369C /* DetailExpensesView.swift in Sources */,
 				37FA56E92A81C9AF00AF339C /* SimpleSalesByWeekdayView.swift in Sources */,
 				37FA56E42A81BCD300AF339C /* DetailedBookSalesView.swift in Sources */,
 				37D3756B2A8256280047369C /* SalesPerBookCategoryBarChartView.swift in Sources */,
 				37FA56D82A81ACA600AF339C /* DailySalesChartView.swift in Sources */,
 				37FA56DB2A81ACD900AF339C /* WeeklySalesChartView.swift in Sources */,
 				37FA56C12A81A28500AF339C /* BookCategoryModel.swift in Sources */,
+				37D375762A829AED0047369C /* ExpensesViewModel.swift in Sources */,
 				37FA56E72A81C9A300AF339C /* SalesByWeekdayView.swift in Sources */,
+				37D375792A82C0310047369C /* ExpensesLineChartView.swift in Sources */,
 				37FA56DD2A81ACF000AF339C /* MonthlySalesChartView.swift in Sources */,
+				37D375872A82C71F0047369C /* SalesPerBookCategoryStackedBarChartView.swift in Sources */,
 				37D3756F2A8256540047369C /* SimpleSalesPerBookCategoryView.swift in Sources */,
 				37FA56C32A81A32A00AF339C /* AuthorModel.swift in Sources */,
 				37FA56DF2A81AF1A00AF339C /* SimpleBookSalesView.swift in Sources */,
+				37D3757D2A82C04D0047369C /* ExpensesDetailGridView.swift in Sources */,
 				37FA56AE2A81A20000AF339C /* ChartsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

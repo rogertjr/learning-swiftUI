@@ -3,6 +3,6 @@ This repository contains various examples demonstrating the usage of Swift progr
 > [WIP]
 
 # Examples
-- [SwiftCharts](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftCharts)
+- [Charts](https://github.com/rogertjr/learning-swiftUI/tree/master/Charts)
 - [SwiftData](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftData)
 - [TipKit](https://github.com/rogertjr/learning-swiftUI/tree/master/TipKit)

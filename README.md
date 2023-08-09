@@ -3,6 +3,7 @@ This repository contains various examples demonstrating the usage of Swift progr
 > [WIP]
 
 # Examples
+- [AsyncAwait](https://github.com/rogertjr/learning-swiftUI/tree/master/AsyncAwait)
 - [Charts](https://github.com/rogertjr/learning-swiftUI/tree/master/Charts)
 - [SwiftData](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftData)
 - [TipKit](https://github.com/rogertjr/learning-swiftUI/tree/master/TipKit)

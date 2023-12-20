@@ -7,4 +7,4 @@ SwiftData is a new data persistence framework introduced during WWDC 2023. <br/>
 It allows you to store and manage data on your device and even use iCloud sync to share data between different devices;
 
 ## Examples
-- [TaskManagementApp](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftData/TaskManagementApp) - An example using the new SwiftData framework
+- [ExpenseTracker](https://github.com/rogertjr/learning-swiftUI/tree/master/SwiftData/ExpenseTracker) - An usage example of the new SwiftData framework

@@ -38,6 +38,19 @@ struct FilterTransactionView<Content: View>: View {
 		self.content = content
 	}
 	
+	init(statDate: Date, endDate: Date, category: Category?, @ViewBuilder content: @escaping ([Transaction]) -> Content) {
+		let rawValue = category?.rawValue ?? ""
+		
+		let predicate = #Predicate<Transaction> { transaction in
+			return transaction.dateAdded >= statDate && transaction.dateAdded <= endDate
+				&& (rawValue.isEmpty ? true : transaction.category == rawValue)
+		}
+		
+		_transactions = Query(filter: predicate, sort: [SortDescriptor(\Transaction.dateAdded, order: .reverse)], animation: .snappy)
+		
+		self.content = content
+	}
+	
 	// MARK: - Layout
     var body: some View {
 		content(transactions)

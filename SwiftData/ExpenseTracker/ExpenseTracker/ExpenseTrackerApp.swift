@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 @main
 struct ExpenseTrackerApp: App {
@@ -24,6 +25,9 @@ struct ExpenseTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+				.onAppear {
+					WidgetCenter.shared.reloadAllTimelines()
+				}
         }
         .modelContainer(sharedModelContainer)
     }

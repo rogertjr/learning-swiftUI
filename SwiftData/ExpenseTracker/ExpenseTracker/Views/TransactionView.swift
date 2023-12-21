@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TransactionView: View {
 	// MARK: - Properties
@@ -125,6 +126,7 @@ struct TransactionView: View {
 			context.insert(newTransaction)
 		}
 		dismiss()
+		WidgetCenter.shared.reloadAllTimelines()
 	}
 }
 
